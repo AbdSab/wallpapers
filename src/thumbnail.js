@@ -5,8 +5,9 @@ const test = async () => {
     for(let file of files) {
         await sharp('data/nature/full/' + file)
             .resize({
-                width: 300,
+                width: 200,
                 height: 400,
+                fit: sharp.fit.fill
             })
             .sharpen()
             .toFile('data/nature/thumb/'+file)
